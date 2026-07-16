@@ -1,6 +1,6 @@
 ---
 name: design-functional-3d-prints
-description: "Design robust, parametric, manufacturable parts for polymer 3D printing. Use when Codex needs to create or review functional FDM/FFF, SLA, or SLS parts; determine whether geometry is printable; choose among self-supporting redesign, orientation, bridging, splitting, slicer-generated or painted support, custom CAD breakaway support, soluble interfaces, or another process; translate requirements into CAD; select walls, ribs, holes, bosses, clearances, materials, coupons, or a verification plan; or decide whether a model is ready to print."
+description: "Design robust, parametric, manufacturable parts for polymer 3D printing. Use when Codex needs to create, review, reverse-engineer, replace, or upgrade functional FDM/FFF, SLA, or SLS parts; determine whether geometry is printable; choose among self-supporting redesign, orientation, bridging, splitting, slicer-generated or painted support, custom CAD breakaway support, soluble interfaces, or another process; translate requirements into CAD; select walls, ribs, holes, bosses, clearances, materials, coupons, or a verification plan; or decide whether a model is ready to print."
 ---
 
 # Design Functional 3D Prints
@@ -12,6 +12,7 @@ Turn functional requirements into editable CAD and a print-validation plan. Opti
 - Read [references/design-rules.md](references/design-rules.md) when choosing geometry, material, process, or orientation.
 - Read [references/printability-and-supports.md](references/printability-and-supports.md) whenever a part contains overhangs, bridges, islands, internal ceilings, support-sensitive surfaces, or uncertain build orientation.
 - Read [references/production-dfam.md](references/production-dfam.md) for repeatable FDM/FFF production, support-aware geometry, first-layer strategy, holes, text, and toolpath control.
+- Read [references/reverse-engineering-and-field-validation.md](references/reverse-engineering-and-field-validation.md) when replacing a damaged or missing part, fitting an existing assembly, upgrading a mechanism, or evaluating service life.
 - Read [references/evidence-driven-engineering.md](references/evidence-driven-engineering.md) when making strength, material, tolerance, or durability claims.
 - Read [references/verification.md](references/verification.md) before declaring a design complete.
 - Read [references/source-notes.md](references/source-notes.md) only when tracing the research basis or looking for visual examples.
@@ -23,12 +24,14 @@ Turn functional requirements into editable CAD and a print-validation plan. Opti
 
 Record:
 
-- function and failure consequence;
+- function, failure consequence, and downstream effects of fragments, debris, leaks, or jams;
 - envelope, keep-outs, datum surfaces, and mating interfaces;
 - load direction, magnitude, duration, impact, temperature, moisture, UV, and chemicals;
 - required life, assembly cycles, appearance, and post-processing;
 - printer process, material, nozzle or optical resolution, layer profile, and build volume;
 - acceptance criteria and unknowns.
+
+For a replacement or upgrade, also record the current system's measurable behavior, surviving datums, mating components, evidence of wear or failure, and which geometry may change. Do not reproduce a broken surface as nominal geometry or preserve the original failure mode by default.
 
 Do not invent critical dimensions. Mark assumptions and keep them parameterized.
 
@@ -55,6 +58,8 @@ Separate these functions when practical:
 Keep an editable source model as the authority. Name parameters by intent, including wall, rib, boss, hole, clearance, chamfer, fillet, and process compensation. Derive repeated dimensions from shared parameters.
 
 Model stable primary volumes first, then interfaces, load-carrying features, process features, and cosmetic details. Avoid long chains of fragile face references when a datum, sketch, or explicit parameter will remain stable.
+
+When reconstructing an existing part, follow [references/reverse-engineering-and-field-validation.md](references/reverse-engineering-and-field-validation.md). Use scans and photographs as evidence, but rebuild critical datums and fits from measured, parametric geometry. Prototype the uncertain interface before printing the entire part.
 
 ### 5. Design a printable build strategy
 
@@ -94,6 +99,10 @@ Use the cheapest test that can disprove the design:
 5. full part under realistic load and environment.
 
 For consequential parts, follow [references/evidence-driven-engineering.md](references/evidence-driven-engineering.md), add an appropriate engineering analysis, safety factor, abuse test, repeat specimens, and independent review. Do not claim safety certification from geometry inspection or a single successful print.
+
+For parts installed in an existing system, repeat the baseline measurements after installation and define field-inspection intervals, retirement criteria, or service-exposure tests when aging, wear, creep, weather, or safety consequence matters.
+
+When a failed test could damage the host system or release a hazardous fragment, reproduce and contain that failure in a separate fixture before progressing to guarded installed tests.
 
 ### 9. Deliver reproducible outputs
 

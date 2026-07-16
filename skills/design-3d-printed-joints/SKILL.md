@@ -1,6 +1,6 @@
 ---
 name: design-3d-printed-joints
-description: "Select, design, parameterize, and validate joints for 3D-printed assemblies. Use when Codex needs to connect split or modular printed parts; choose among locating pins, press or slip fits, tongue-and-slot joints, dovetails, snap-fits, compliant clips, bayonets, printed threads, screws, captive nuts, heat-set inserts, adhesives, magnets, hinges, ball joints, or print-in-place mechanisms; size clearances; orient interfaces; or create joint test coupons."
+description: "Select, adapt, design, parameterize, and validate joints for 3D-printed assemblies. Use when Codex needs to connect split or modular printed parts; adapt a joint from another manufacturing process; choose among locating pins, press or slip fits, tongue-and-slot joints, dovetails, snap-fits, compliant clips, bayonets, printed threads, screws, captive nuts, heat-set inserts, adhesives, magnets, hinges, ball joints, or print-in-place mechanisms; size clearances; orient interfaces; or create joint test coupons."
 ---
 
 # Design 3D-Printed Joints
@@ -46,6 +46,8 @@ Do not ask one fragile feature to locate, flex, carry shear, and provide the har
 
 Use [references/joint-selection.md](references/joint-selection.md). Compare at least two plausible families when failure consequence, print time, or serviceability matters. Prefer the fewest parts and operations that still meet the acceptance criteria.
 
+When adapting a joint from woodworking, machining, molding, or another process, preserve its useful locating and load-transfer principles while redesigning its process assumptions. Reconsider insertion path, taper, relief, enclosed waste space, tool access, grain direction, and continuous contact for the selected print orientation and material.
+
 ### 4. Parameterize the interface
 
 Create named parameters for nominal size, per-side clearance, interference, engagement length, insertion depth, lead-in, root fillet, stop position, flexure length and thickness, fastener pilot, and process compensation.
@@ -69,6 +71,10 @@ Follow [references/fit-and-calibration.md](references/fit-and-calibration.md). U
 ### 8. Test the failure modes
 
 Measure assembly force, play, retention, motion, damage, cycle life, creep, and environmental effects as applicable. Inspect layer separation, root cracking, tooth shear, boss splitting, insert pull-out, adhesive peel, wear debris, and permanent set.
+
+For structural comparisons, include a continuous unsplit control when feasible and record stiffness, slip, deformation, disassembly, and failure location rather than only peak load.
+
+Test the effect of a loose, omitted, broken, or incorrectly installed retainer when the consequence warrants it. Add captured hardware, secondary retention, inspection, or fail-safe load support when loss of one screw, clip, magnet, or bond is an unacceptable single failure.
 
 Test the intended misuse that the consequence warrants. Redesign the load path rather than merely increasing global infill when a local feature fails.
 

@@ -33,7 +33,7 @@ Choose, generate, map, bake, and validate physical textures. Covers swept curves
 
 ## Research basis
 
-The guidance synthesizes reusable principles from production-oriented modeling examples by [Slant 3D](https://www.youtube.com/@slant3d), controlled engineering tests and texturing tools by [CNC Kitchen](https://www.youtube.com/@CNCKitchen), joint-design examples found through the requested YouTube search, official geometry-tool documentation, manufacturing file specifications, and manufacturer engineering references. Source notes are included inside each skill. No creator-specific dimensions are presented as universal rules.
+The guidance synthesizes reusable principles from production-oriented modeling examples by [Slant 3D](https://www.youtube.com/@slant3d), controlled engineering tests and texturing tools by [CNC Kitchen](https://www.youtube.com/@CNCKitchen), replacement-part reconstruction and iterative field testing by [Need It Make It](https://www.youtube.com/@NeedItMakeIt), joint-design examples found through the requested YouTube search, official geometry-tool documentation, manufacturing file specifications, and manufacturer engineering references. Source notes are included inside each skill. No creator-specific dimensions or headline results are presented as universal rules.
 
 ## Install
 

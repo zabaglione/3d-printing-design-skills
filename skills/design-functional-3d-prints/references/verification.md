@@ -2,9 +2,10 @@
 
 ## Requirements
 
-- [ ] Define the function, interfaces, environment, life, loads, and failure consequence.
+- [ ] Define the function, interfaces, environment, life, loads, failure consequence, and downstream fragment, debris, leak, or jam paths.
 - [ ] Turn important requirements into measurable acceptance criteria.
 - [ ] Mark every assumption that could change geometry or material.
+- [ ] For a replacement or upgrade, record baseline system behavior, surviving datums, mating evidence, and the original failure mode.
 
 ## Source model
 
@@ -27,6 +28,7 @@
 - [ ] Verify walls become stable toolpaths or exposure features.
 - [ ] Inspect holes, bridges, supports, seams, first-layer effects, islands, drainage, and powder escape.
 - [ ] Confirm local ribs, slots, and micro-features create the intended perimeter and infill paths.
+- [ ] Inspect path continuity, deposition order, start-stop locations, and transitions between walls and solid fill when they affect performance.
 - [ ] Verify supports or CAD support fins are stable, reachable, removable, and kept off critical surfaces.
 - [ ] Confirm no support or trapped material blocks assembly or motion.
 
@@ -39,6 +41,8 @@
 - [ ] Record raw measurements, failure locations, conditioning, and any excluded result; do not report only the best specimen.
 - [ ] Inspect the failure surface and update the load path or local feature.
 - [ ] Re-run affected checks after each geometry or process change.
+- [ ] For an installed replacement, repeat the baseline system test and define service inspections or retirement criteria when consequence or aging warrants them.
+- [ ] Reproduce and contain hazardous failure paths in a separate fixture before exposing the host system.
 
 ## Repeatable production
 

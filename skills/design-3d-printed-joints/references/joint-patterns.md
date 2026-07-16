@@ -18,6 +18,7 @@
 - Add venting to blind slots and reservoirs when adhesive is used.
 - Use lap, scarf, finger, or keyed panel joints to lengthen the load path across large or thin parts. Keep bending loads out of a single sharp seam.
 - Use bidirectional tabs only when release access or intentional permanence is clear.
+- When adapting a mature joint from another manufacturing process, preserve the useful engagement and load path but parameterize insertion direction, engagement length, taper, curvature, relief, and stop. Add each variation only when it improves assembly, load distribution, anti-rotation, orientation, or printability.
 
 ## Snap-fits and compliant clips
 
@@ -53,6 +54,15 @@ Choose among cantilever, U-shaped, torsion, annular, leaf-spring, button, or mul
 - Derive boss candidates from the required pull-out, torque, clamp load, edge distance, continuous wall paths, and the exact insert geometry. If no validated boss rule exists, screen radial boss thickness and material below the insert as separate parameters after selecting a workable hole range.
 - Use at least three specimens per promising comparative condition. Increase sample count and production coverage when variation, consequence, or the required confidence demands it.
 - Use washers or flanges to spread clamp load and account for polymer creep under preload.
+- Let interlocking faces, shoulders, or keys locate the parts and react shear or bending where practical; use the fastener primarily to maintain clamp. Do not make the screw shank or a printed thread carry every joint function by default.
+- Capture removable fasteners when loose hardware can enter machinery or the environment. If loss of one fastener is unacceptable, add independent retention or a fail-safe load path and test the joint with that fastener loose or absent.
+
+## Compare structural joints
+
+- Compare candidates in the same material condition, orientation, local wall strategy, span, and load direction.
+- Include a continuous unsplit control when it provides a meaningful upper reference.
+- Record initial stiffness, permanent deformation, interface slip, peak load, failure location, and whether the joint can be inspected or disassembled.
+- A joint that survives once but damages its interface, wedges irreversibly, or moves failure into an unsafe region has not necessarily improved the assembly.
 
 ## Adhesive and solvent-assisted joints
 

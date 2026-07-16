@@ -59,6 +59,8 @@ CAD defines a volume; the slicer decides how that volume is filled. Use geometry
 - Add ribs, gussets, local shells, slots, or small reliefs when they place continuous paths along the load route.
 - Prefer local reinforcement over raising infill everywhere.
 - Avoid tiny features that disappear, alternate unpredictably, or create isolated start-stop paths.
+- Inspect path continuity, deposition order, start-stop locations, and transitions between walls and solid fill. Equal material volume or infill percentage does not imply equal bonding or load transfer.
+- Treat the time between adjacent paths as part of the manufactured condition when bonding is important. Compare the actual generated paths and physical results; a path strategy that helps one material or geometry may not transfer to another.
 - Recheck after changing line width, nozzle, wall generator, infill, or slicer version.
 
 Do not call a hidden feature a strength improvement until the sliced paths and a physical test support the claim.

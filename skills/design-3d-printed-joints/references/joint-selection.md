@@ -8,8 +8,9 @@ Select from function and failure mode before choosing a familiar shape.
 2. Decide whether printed geometry alone is a requirement or non-printed hardware is acceptable.
 3. Identify the dominant service load and the weakest likely print direction.
 4. Assign locating, load-transfer, retention, stop, and assembly functions.
-5. Shortlist two families and compare print risk, assembly risk, life, and serviceability.
-6. Calibrate the selected interface on the production process.
+5. If adapting a joint from another process, separate its transferable load-path principle from its original tooling, grain, draft, waste-removal, or access assumptions.
+6. Shortlist two families and compare print risk, assembly risk, life, and serviceability.
+7. Calibrate the selected interface on the production process.
 
 ## Family matrix
 

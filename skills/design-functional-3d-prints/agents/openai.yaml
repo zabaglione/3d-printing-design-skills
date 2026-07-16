@@ -1,4 +1,4 @@
 interface:
   display_name: "Design Functional 3D Prints"
   short_description: "Design reliable, printable functional parts"
-  default_prompt: "Use $design-functional-3d-prints to turn these requirements into a parametric part with a verified build and support strategy."
+  default_prompt: "Use $design-functional-3d-prints to create, replace, or upgrade this part as a parametric design with a verified build, support, and field-validation strategy."

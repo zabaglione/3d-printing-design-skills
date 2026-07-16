@@ -43,10 +43,13 @@ Control or record the layers that could change the conclusion.
 
 Use a cropped feature coupon for early screening, then confirm the selected design in the real part. A generic tensile bar, hook, or cube cannot reproduce every notch, path, constraint, or environment.
 
+For replacements, upgrades, and long-lived parts, also follow [reverse-engineering-and-field-validation.md](reverse-engineering-and-field-validation.md). Compare the installed system with a recorded baseline and keep time, exposure, wear, and inspection history in the evidence chain.
+
 ## Reason about strength architecture
 
 - Orientation changes both layer loading and geometry quality. Compare realistic orientations rather than assuming flat, vertical, or 45-degree printing is always best.
 - External shells and local load-aligned paths often contribute more efficiently than indiscriminately increasing infill.
+- Toolpath order and continuity can change the time between neighboring deposits, bonding, and the route by which a crack crosses the part. Inspect these variables in the generated build instead of describing strength only by wall count and infill percentage.
 - Infill pattern and density still matter when they brace shells, transfer shear, resist crushing, or become part of a tested load path.
 - Temperature, cooling, line width, nozzle, and speed can change bonding and geometry together. A stronger coupon that no longer meets dimensions is not automatically a better process.
 - Simulation is a load-path aid unless it models printed anisotropy, defects, contacts, and material condition with validated inputs.
