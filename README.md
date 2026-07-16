@@ -1,6 +1,6 @@
 # 3D Printing Design Skills
 
-Reusable agent skills for designing functional polymer 3D prints and the joints that connect them.
+Reusable agent skills for designing functional polymer 3D prints, the joints that connect them, and the physical textures that shape their surfaces and structures.
 
 This repository captures transferable design workflows rather than product-specific recipes. The skills treat geometry, material condition, print process, orientation, toolpaths, fit calibration, production operations, and physical validation as one engineering system.
 
@@ -14,6 +14,10 @@ Turn functional requirements into parametric, process-aware parts. Covers load p
 
 Select and validate reusable joint families. Covers pins, keys, fins, tongue-and-slot joints, dovetails, snap-fits, compliant clips, bayonets, threads, fasteners, inserts, adhesives, magnets, hinges, ball joints, large-panel joints, and print-in-place mechanisms.
 
+### `design-3d-printable-textures`
+
+Choose, generate, map, bake, and validate physical textures. Covers DNA-like helices, knit, weave, braid, repeated motifs, Voronoi and cellular skins, height-field relief, curved-surface mapping, slicer roughness, mesh complexity, and the boundary between printable geometry and appearance-only maps.
+
 ## Core principles
 
 - Design from measurable requirements and failure modes.
@@ -23,21 +27,23 @@ Select and validate reusable joint families. Covers pins, keys, fins, tongue-and
 - Never assume one clearance works across printers, materials, profiles, sizes, or orientations.
 - Use representative fit coupons and record the qualified process.
 - Convert strength and tolerance claims into representative, repeatable tests.
+- Treat bump, normal, color, and material maps as appearance until required relief is baked into supported manufacturing geometry.
 - Inspect the sliced build and validate the physical part before making performance claims.
 
 ## Research basis
 
-The guidance synthesizes reusable principles from production-oriented modeling examples by [Slant 3D](https://www.youtube.com/@slant3d), controlled engineering tests by [CNC Kitchen](https://www.youtube.com/@CNCKitchen), joint-design examples found through the requested YouTube search, and manufacturer engineering references. Source notes are included inside each skill. No creator-specific dimensions are presented as universal rules.
+The guidance synthesizes reusable principles from production-oriented modeling examples by [Slant 3D](https://www.youtube.com/@slant3d), controlled engineering tests and texturing tools by [CNC Kitchen](https://www.youtube.com/@CNCKitchen), joint-design examples found through the requested YouTube search, official geometry-tool documentation, manufacturing file specifications, and manufacturer engineering references. Source notes are included inside each skill. No creator-specific dimensions are presented as universal rules.
 
 ## Install
 
-Clone the repository and copy either skill directory into your Codex skills directory:
+Clone the repository and copy any skill directory into your Codex skills directory:
 
 ```bash
 git clone https://github.com/zabaglione/3d-printing-design-skills.git
 mkdir -p ~/.codex/skills
 cp -R 3d-printing-design-skills/skills/design-functional-3d-prints ~/.codex/skills/
 cp -R 3d-printing-design-skills/skills/design-3d-printed-joints ~/.codex/skills/
+cp -R 3d-printing-design-skills/skills/design-3d-printable-textures ~/.codex/skills/
 ```
 
 Restart or reload Codex after installation.
@@ -50,6 +56,10 @@ Use $design-functional-3d-prints to design a wall-mounted sensor enclosure for F
 
 ```text
 Use $design-3d-printed-joints to compare a dovetail, snap-fit, and screw joint for a serviceable enclosure.
+```
+
+```text
+Use $design-3d-printable-textures to add a printable Voronoi grip texture to a curved enclosure.
 ```
 
 ## Scope

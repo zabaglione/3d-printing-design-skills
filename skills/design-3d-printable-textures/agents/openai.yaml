@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design 3D-Printable Textures"
+  short_description: "Create printable reliefs, patterns, and lattices"
+  default_prompt: "Use $design-3d-printable-textures to choose and build a printable geometric texture for this part."
