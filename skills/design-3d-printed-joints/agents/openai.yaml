@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design 3D-Printed Joints"
+  short_description: "Select and validate reusable printed joints"
+  default_prompt: "Use $design-3d-printed-joints to select, size, and validate a joint for these parts."
