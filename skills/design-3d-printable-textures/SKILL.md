@@ -1,6 +1,6 @@
 ---
 name: design-3d-printable-textures
-description: "Choose, generate, map, bake, and validate physical textures and repeating geometric structures for 3D printing. Use when Codex needs to create surface relief, embossed or debossed patterns, height-field displacement, grip texture, knit, woven, braided, or DNA-like curve geometry, scales, tiles, Voronoi shells, cellular or beam lattices, porous skins, or slicer-generated roughness; wrap patterns over curved parts; manage seams, sampling, mesh density, and printability; or decide whether a bump, normal, color, or material map must be converted to real geometry."
+description: "Choose, generate, map, bake, and validate physical textures and repeating geometric structures for 3D printing. Use when Codex needs to create surface relief, embossed or debossed patterns, height-field displacement, grip texture, swept-strand or repeated-motif geometry, cellular or beam structures, porous skins, or slicer-generated roughness; wrap patterns over curved parts; manage seams, sampling, mesh density, masks, and printability; or decide whether a bump, normal, color, or material map must be converted to real geometry."
 ---
 
 # Design 3D-Printable Textures
@@ -12,7 +12,7 @@ Turn a visual, tactile, or structural pattern into explicit manufacturing geomet
 - Read [references/texture-taxonomy.md](references/texture-taxonomy.md) to choose a geometric representation and generator.
 - Read [references/mapping-and-printability.md](references/mapping-and-printability.md) before wrapping, baking, exporting, or approving a texture.
 - Read [references/source-notes.md](references/source-notes.md) only when tracing the research basis or selecting an implementation tool.
-- Use `$design-functional-3d-prints` when the texture changes a load path, minimum section, flexibility, ventilation, sealing, or production process.
+- Use `$design-functional-3d-prints` to evaluate build orientation, overhangs, bridges, islands, splitting, slicer support, custom CAD support, and process changes. Also use it when the texture changes a load path, minimum section, flexibility, ventilation, sealing, or production process.
 - Use `$design-3d-printed-joints` when the texture crosses a fit, sliding surface, snap, hinge, fastener, or assembly datum.
 
 ## Hard boundary
@@ -45,14 +45,14 @@ Do not use subjective terms such as `fine`, `rough`, or `organic` without measur
 
 Use [references/texture-taxonomy.md](references/texture-taxonomy.md). Select one primary representation:
 
-- swept curves for helices, yarn, braid, weave, veins, and cables;
+- swept curves for strands, loops, braids, waves, veins, and cables;
 - repeated instances for scales, studs, tiles, stitches, and discrete motifs;
-- cell or graph geometry for Voronoi, honeycomb, and porous networks;
+- cell or graph geometry for partitioned, honeycomb, and porous networks;
 - implicit or volumetric fields for smoothly blended cellular forms;
 - scalar height fields for shallow relief;
 - slicer perturbation for non-portable process texture.
 
-Do not force a topological structure such as knit or Voronoi openings into a shallow grayscale bump map when crossings, holes, or connectivity matter.
+Do not force a topological structure into a shallow grayscale bump map when crossings, holes, or connectivity matter.
 
 ### 3. Choose the mapping domain
 
@@ -82,6 +82,8 @@ For random or cellular patterns, save the seed. For repeated structures, derive 
 ### 6. Protect manufacturability and function
 
 Follow [references/mapping-and-printability.md](references/mapping-and-printability.md).
+
+Run the buildability and support decision in `$design-functional-3d-prints` for every downward face, bridge, unsupported start, cavity, and slender feature introduced by the texture. Prefer masking, remapping, simplifying, reorienting, or splitting before adding support. Choose slicer or custom CAD support from access, surface, repeatability, and removal requirements rather than from the visual complexity of the pattern.
 
 - Preserve a qualified base wall under inward relief.
 - Avoid self-intersections, zero-thickness contacts, trapped volumes, unsupported downward faces, and isolated islands.

@@ -2,6 +2,18 @@
 
 Choose the representation from topology and function, not from the visual name of the pattern.
 
+## Contents
+
+- [Scale classes](#scale-classes)
+- [Family matrix](#family-matrix)
+- [Helices and swept-strand structures](#helices-and-swept-strand-structures)
+- [Knit, weave, and braid](#knit-weave-and-braid)
+- [Repeated motifs](#repeated-motifs)
+- [Partitioned and cellular surfaces](#partitioned-and-cellular-surfaces)
+- [Height-field displacement](#height-field-displacement)
+- [Implicit and volumetric geometry](#implicit-and-volumetric-geometry)
+- [Slicer and material textures](#slicer-and-material-textures)
+
 ## Scale classes
 
 Use scale relative to the qualified process rather than fixed universal dimensions.
@@ -19,16 +31,16 @@ A pattern may move between classes when scaled. Reclassify it after every major 
 
 | Family | Use for | Primary parameters | Main risks |
 | --- | --- | --- | --- |
-| Swept curves | DNA-like helices, yarn, braid, weave, veins, cables | centerline, pitch, phase, profile, crossing order | fused crossings, weak unsupported spans, excessive curvature |
+| Swept curves | helices, strands, loops, braid, weave, veins, cables | centerline, pitch, phase, profile, crossing order | fused crossings, weak unsupported spans, excessive curvature |
 | Repeated motifs | scales, studs, tiles, stitches, dimples | motif, spacing, orientation, phase, clipping | partial motifs, overlap, instance explosion |
-| Surface cell graph | Voronoi skins, honeycomb, crack or vein networks | seeds, metric, wall or beam width, clipping | disconnected islands, narrow edges, ugly closure seam |
+| Surface cell graph | partitioned skins, honeycomb, crack or vein networks | seeds, metric, wall or beam width, clipping | disconnected islands, narrow edges, ugly closure seam |
 | Volumetric cell field | foam, gyroid-like or blended porous bodies | field function, threshold, cell scale, shell offset | trapped material, thin regions, expensive meshing |
 | Height-field relief | leather, wood grain, grip, logos, terrain-like bumps | map, amplitude, baseline, scale, projection | faceting, self-intersection, wall loss, mapping distortion |
 | Sculpted or vector relief | controlled ornament, channels, lettering | curves, offsets, draft, depth, fillets | sharp valleys, fragile peaks, support scars |
 | Slicer perturbation | fuzzy or randomized sidewall roughness | thickness, point distance, region | non-portable output, dimensional change, limited surfaces |
 | Material or color texture | multi-material or full-color intent | image, UVs, material IDs | no physical relief, consumer support varies |
 
-## Helices and DNA-like structures
+## Helices and swept-strand structures
 
 Represent a helix as a centerline before adding thickness. A basic axial helix can be parameterized by:
 
@@ -70,9 +82,9 @@ Keep one authoritative motif and instance it over points, curves, or cells. Dela
 - Orient motifs from a stable local frame; do not let normals flip unpredictably near poles or inflections.
 - Vary scale or rotation through bounded parameters and a saved seed.
 
-## Voronoi and cellular surfaces
+## Partitioned and cellular surfaces
 
-Treat Voronoi as a cell construction, not merely a visual noise texture.
+Treat a partitioned surface as a cell construction, not merely a visual noise texture.
 
 1. Define a planar, surface, or volumetric domain.
 2. Generate deterministic seed points with density and exclusion rules.
@@ -82,7 +94,7 @@ Treat Voronoi as a cell construction, not merely a visual noise texture.
 6. Give every retained element a parameterized section or shell thickness.
 7. Remove slivers, merge near-coincident vertices, and verify connectivity.
 
-If the pattern carries load, test cell-size distribution, node geometry, anisotropy, and failure location. A decorative Voronoi shell is not automatically an optimized lattice.
+If the pattern carries load, test cell-size distribution, node geometry, anisotropy, and failure location. A decorative cell shell is not automatically an optimized lattice.
 
 ## Height-field displacement
 

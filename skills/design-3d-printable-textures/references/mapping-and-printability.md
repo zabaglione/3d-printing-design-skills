@@ -1,5 +1,17 @@
 # Mapping, Printability, and Verification
 
+## Contents
+
+- [Choose a mapping domain](#choose-a-mapping-domain)
+- [Control seams and boundaries](#control-seams-and-boundaries)
+- [Match geometric sampling to the texture](#match-geometric-sampling-to-the-texture)
+- [Protect base geometry](#protect-base-geometry)
+- [Process reasoning](#process-reasoning)
+- [Functional consequences](#functional-consequences)
+- [Build a texture coupon](#build-a-texture-coupon)
+- [Inspect and export](#inspect-and-export)
+- [Acceptance record](#acceptance-record)
+
 ## Choose a mapping domain
 
 | Mapping | Prefer when | Watch for |

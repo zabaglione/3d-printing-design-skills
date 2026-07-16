@@ -73,18 +73,11 @@ For each hole, record its axis relative to the build direction and its function.
 - Add a lead-in without shortening the calibrated bearing region.
 - Reinforce threaded and fastener holes locally and keep clamp force off unsupported crowns.
 
-## Replace accidental support with designed support
+## Control support as a production operation
 
-When the part cannot be reoriented or split, CAD support fins can make support behavior explicit.
+Use the decision workflow in [printability-and-supports.md](printability-and-supports.md). Record why the design uses self-supporting geometry, bridging, slicer-generated support, custom CAD support, a secondary support material, a split, or another process.
 
-- Give the fin a broad, stable base and a smooth root.
-- Connect adjacent fins when that prevents independent tipping.
-- Use small, accessible breakaway contacts that do not become the functional surface.
-- Put removal marks where they can be hidden or finished.
-- Parameterize the fin so it can be tuned or suppressed.
-- Test both build survival and removal force.
-
-Automatic support remains appropriate when it is reliable, accessible, and cheaper than maintaining designed support geometry.
+For repeated production, preserve every painted region, blocker, support profile, CAD break line, and removal instruction as controlled manufacturing data. Count support generation, tool changes, removal, inspection, surface repair, and disposal in accepted-part cost.
 
 ## Use compliance to absorb process variation
 

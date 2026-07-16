@@ -8,7 +8,7 @@ This repository captures transferable design workflows rather than product-speci
 
 ### `design-functional-3d-prints`
 
-Turn functional requirements into parametric, process-aware parts. Covers load paths, orientation, walls, ribs, bosses, holes, designed supports, first layers, material condition, production operations, export hygiene, slicer inspection, and evidence-driven validation.
+Turn functional requirements into parametric, process-aware parts. Covers load paths, orientation, walls, ribs, bosses, holes, first layers, and a universal decision flow for self-supporting redesign, bridges, splits, slicer-generated support, custom CAD support, secondary support materials, and process changes.
 
 ### `design-3d-printed-joints`
 
@@ -16,13 +16,14 @@ Select and validate reusable joint families. Covers pins, keys, fins, tongue-and
 
 ### `design-3d-printable-textures`
 
-Choose, generate, map, bake, and validate physical textures. Covers DNA-like helices, knit, weave, braid, repeated motifs, Voronoi and cellular skins, height-field relief, curved-surface mapping, slicer roughness, mesh complexity, and the boundary between printable geometry and appearance-only maps.
+Choose, generate, map, bake, and validate physical textures. Covers swept curves, repeated motifs, cellular structures, height-field relief, curved-surface mapping, protected regions, slicer roughness, mesh complexity, and the boundary between printable geometry and appearance-only maps. Buildability and support decisions route through the functional-print skill instead of being tied to named pattern examples.
 
 ## Core principles
 
 - Design from measurable requirements and failure modes.
 - Keep nominal geometry separate from process compensation.
 - Choose part split and print orientation together.
+- Redesign for self-support before accepting support; when support remains, choose slicer-generated, custom CAD, secondary-material, split, or process-change strategies from measurable production requirements.
 - Separate locating, load transfer, retention, stop, and assembly functions.
 - Never assume one clearance works across printers, materials, profiles, sizes, or orientations.
 - Use representative fit coupons and record the qualified process.
@@ -51,7 +52,7 @@ Restart or reload Codex after installation.
 ## Example prompts
 
 ```text
-Use $design-functional-3d-prints to design a wall-mounted sensor enclosure for FDM printing.
+Use $design-functional-3d-prints to decide whether this part should be redesigned, reoriented, split, bridged, supported by the slicer, or given custom CAD support.
 ```
 
 ```text
@@ -59,7 +60,7 @@ Use $design-3d-printed-joints to compare a dovetail, snap-fit, and screw joint f
 ```
 
 ```text
-Use $design-3d-printable-textures to add a printable Voronoi grip texture to a curved enclosure.
+Use $design-3d-printable-textures to add printable tactile relief to a curved enclosure without disturbing its fits or bed-contact face.
 ```
 
 ## Scope

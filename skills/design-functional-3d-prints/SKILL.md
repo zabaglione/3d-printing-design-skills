@@ -1,6 +1,6 @@
 ---
 name: design-functional-3d-prints
-description: "Design robust, parametric, manufacturable parts for polymer 3D printing. Use when Codex needs to create or review functional FDM/FFF, SLA, or SLS parts; translate requirements into CAD; choose orientation, walls, ribs, holes, bosses, clearances, supports, splits, materials, test coupons, or a verification plan; or determine whether a model is ready to print."
+description: "Design robust, parametric, manufacturable parts for polymer 3D printing. Use when Codex needs to create or review functional FDM/FFF, SLA, or SLS parts; determine whether geometry is printable; choose among self-supporting redesign, orientation, bridging, splitting, slicer-generated or painted support, custom CAD breakaway support, soluble interfaces, or another process; translate requirements into CAD; select walls, ribs, holes, bosses, clearances, materials, coupons, or a verification plan; or decide whether a model is ready to print."
 ---
 
 # Design Functional 3D Prints
@@ -10,6 +10,7 @@ Turn functional requirements into editable CAD and a print-validation plan. Opti
 ## Load the relevant references
 
 - Read [references/design-rules.md](references/design-rules.md) when choosing geometry, material, process, or orientation.
+- Read [references/printability-and-supports.md](references/printability-and-supports.md) whenever a part contains overhangs, bridges, islands, internal ceilings, support-sensitive surfaces, or uncertain build orientation.
 - Read [references/production-dfam.md](references/production-dfam.md) for repeatable FDM/FFF production, support-aware geometry, first-layer strategy, holes, text, and toolpath control.
 - Read [references/evidence-driven-engineering.md](references/evidence-driven-engineering.md) when making strength, material, tolerance, or durability claims.
 - Read [references/verification.md](references/verification.md) before declaring a design complete.
@@ -55,9 +56,13 @@ Keep an editable source model as the authority. Name parameters by intent, inclu
 
 Model stable primary volumes first, then interfaces, load-carrying features, process features, and cosmetic details. Avoid long chains of fragile face references when a datum, sketch, or explicit parameter will remain stable.
 
-### 5. Design for the selected process
+### 5. Design a printable build strategy
 
-Apply the rules in [references/design-rules.md](references/design-rules.md). In particular:
+Apply [references/printability-and-supports.md](references/printability-and-supports.md) before accepting support generation. Classify every risky region as an overhang, bridge, unsupported start, internal ceiling, trapped support region, or unstable slender feature.
+
+Challenge the design in this order: make the geometry self-supporting, change orientation, split and assemble, use a qualified bridge, use selective slicer support, add parameterized CAD breakaway support, use a compatible secondary support material, or change process. Stop at the first option that satisfies function, surface, repeatability, and total production cost. Do not optimize only for minimum support volume.
+
+Then apply [references/design-rules.md](references/design-rules.md). In particular:
 
 - align walls and thin features with achievable toolpaths or exposure resolution;
 - use ribs, gussets, shells, and generous transitions instead of uniform bulk;
@@ -97,6 +102,7 @@ Provide:
 - editable source CAD and neutral STEP when supported;
 - STL or 3MF in explicit units;
 - orientation and process notes;
+- the selected support strategy, protected surfaces, and either the saved slicer project or parameterized CAD support and removal instructions;
 - parameter and assumption summary;
 - coupon results and chosen compensation;
 - verification evidence and unresolved risks.
